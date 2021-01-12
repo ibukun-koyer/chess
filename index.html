@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <h1 id="header">CHESS</h1>
+    <div id="time">Time section from api and timer</div> -->
+    <section id="container">
+        <div id="blackCharacters">
+            <header>
+                <h1>Black chess pieces</h1>
+            </header>
+            <div class="image-bgd">
+                <img src="../black king.png" alt="black king" class="imgSizes" name="black king">
+            </div>
+            <div class="image-bgd">
+                <img src="../black queen.png" alt="black queen" class="imgSizes" name="black queen">
+            </div>
+            <div class="image-bgd">
+                <img src="../black carlos.png" alt="black castle" class="imgSizes" name="black castle">
+            </div>
+            <div class="image-bgd">
+                <img src="../black glider.png" alt="black glider" class="imgSizes" name="black glider">
+            </div>
+            <div class="image-bgd">
+                <img src="../black pawn.png" alt="black pawn" class="imgSizes" name="black pawn">
+            </div>
+            <div class="image-bgd">
+                <img src="../black knight.png" alt="black knight" class="imgSizes" name="black knight">
+            </div>
+
+        </div>
+        <div id="board">
+            <header>
+                <h1>CHESS</h1>
+
+            </header>
+            <div id="time">
+                <div class="time" id="timeAPI">time: <span id="curr_time"></span></div>
+                <div class="time">time spent: <span id="timer">0hr : 0min</span></div>
+            </div>
+            <div id="area">
+                <div id="removedBlack"></div>
+                <div id="chessBoard">
+                    <div id="playSection">
+
+                    </div>
+
+                </div>
+                <div id="removedWhite"></div>
+            </div>
+            <div id="social">
+                <div class="imageCont">
+                    <a href="https://www.instagram.com/random_n_p_c/">
+                        <img src="https://cdn2.iconfinder.com/data/icons/instagram-new/512/instagram-round-flat-512.png"
+                            alt="instagram-icon" class="roundImage" name="Instagram"></a>
+                </div>
+                <div class="imageCont">
+                    <a href="https://twitter.com/honestk26396859">
+                        <img src="https://utilitypeopleuk.com/wp-content/uploads/2017/06/twitter-icon-circle-blue-logo-preview.png"
+                            alt="twitter-icon" class="roundImage" name="Twitter"></a>
+                </div>
+                <div class="imageCont">
+                    <a
+                        href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">
+                        <img src="https://icons.iconarchive.com/icons/sicons/basic-round-social/512/linkedin-icon.png"
+                            alt="linkedin-icon" class="roundImage" name="Linked-in"></a>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="whiteCharacters">
+            <header>
+                <h1>white chess pieces</h1>
+            </header>
+            <div class="image-bgd">
+                <img src="../white king.png" alt="white king" class="imgSizes" name="white king">
+            </div>
+            <div class="image-bgd">
+                <img src="../white queen.png" alt="white queen" class="imgSizes" name="white queen">
+            </div>
+            <div class="image-bgd">
+                <img src="../white carlos.png" alt="white castle" class="imgSizes" name="white castle">
+            </div>
+            <div class="image-bgd">
+                <img src="../white glider.png" alt="white glider" class="imgSizes" name="white glider">
+            </div>
+            <div class="image-bgd">
+                <img src="../white pawn.png" alt="white pawn" class="imgSizes" name="white pawn">
+            </div>
+            <div class="image-bgd">
+                <img src="../white knight.png" alt="white knight" class="imgSizes" name="white knight">
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

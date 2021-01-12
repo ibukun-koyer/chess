@@ -1,0 +1,194 @@
+
+.image-bgd{
+    width:40%;
+    height:5em;
+    background-color:white;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    border:solid black;
+    border-radius:10em;
+    box-shadow:0.1em 0.1em 0.4em 0.002em  black;
+    /* padding:1em; */
+    margin:1em 0 1em;
+}
+.info{
+    
+    text-align: center;
+    letter-spacing: 0;
+    font-weight: 200;
+    background-color: rgb(0, 0, 0);
+}
+.imgSizes{
+    width:60%;
+}
+body{
+    margin:0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5em;
+}
+header{
+    text-align:center;
+}
+#container{
+    display:flex;
+}
+#whiteCharacters{
+    color:white;
+    width:20%;
+    height:100vh;
+    background-image:linear-gradient(90deg,#65ceff, #00b0ff);
+    /* background-color:#00b0ff; */
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+#board{
+    width: 60%;
+    height:100vh;
+    background-color:#65ceff;
+    color:white;
+    font-size: 1.5em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#blackCharacters{
+    color:white;
+    width:20%;
+    height:100vh;
+    background-image:linear-gradient(-90deg,#65ceff, #00b0ff);
+    /* background-color:#00b0ff; */
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+/* .image-bgd:hover{
+    background-color:black;
+} */
+#zero{
+    width:0;
+}
+#time{
+    font-size: 0.7em;
+    display:flex;
+    flex-direction: column;
+
+}
+.time{
+    padding:0.4em;
+   
+    flex-grow:1;
+}
+#chessBoard{
+    background-color: black;
+    background-image: url("../chess board.png");
+    background-size:35rem 35rem;
+    box-shadow:0.1em 0.1em 0.4em 0.002em  black;
+
+    width:23.2em;
+    height:23.2em;
+    background-repeat: no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+#area{
+    height:23.2em;
+    width:100%;
+
+    display:flex;
+    justify-content: center;
+}
+
+#playSection{
+
+    width:20.5em;
+    height:20.5em;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.boxes{
+
+    width:12.5%;
+    height:2.58em;
+}
+.centered{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#removedBlack{
+    height:23.2em;
+    width:20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+#removedWhite{
+    height:23.2em;
+    width:20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+ 
+}
+#social{
+    margin-top:0.5em;
+    width:100%;
+    height:2.5em;
+    display:flex;
+    justify-content: center;
+
+    align-items: center;
+    /* background-color: #346981; */
+
+}
+.imageCont{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 1em;
+}
+.roundImage{
+    
+    width:1.5em;
+}
+.highlight{
+    background-image: radial-gradient(pink, rgb(197, 113, 127));
+}
+.outside_size{
+    width:20%;
+}
+.ended{
+    margin-top:5em;
+    margin-bottom:10em;
+    width:30%;
+    color:black;
+    background-color: white;
+    /* box-shadow:0.1em 0.1em 0.2em 0.002em  black; */
+    height:5.3em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 2em; */
+}
+.button{
+    background-image:radial-gradient(#65ceff, #00b0ff);
+    padding:0.6em 1.5em 0.6em 1.5em;
+    /* box-shadow:0.1em 0.1em 0.2em 0.002em  black; */
+    border-radius: 1em;
+    font-family:inherit;
+
+    font-size:0.8em;
+    border:none;
+ 
+}
