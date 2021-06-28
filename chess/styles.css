@@ -1,6 +1,9 @@
-
+:root{
+    --topOffsetInBoard:6.1%;
+    --leftOffsetInBoard:4.5%;
+}
 .image-bgd{
-    width:40%;
+    width:80%;
     height:5em;
     background-color:white;
     display:flex;
@@ -10,18 +13,24 @@
     border:solid black;
     border-radius:10em;
     box-shadow:0.1em 0.1em 0.4em 0.002em  black;
-    /* padding:1em; */
     margin:1em 0 1em;
+    transition: background-color .3s;
 }
 .info{
-    
+    transition: background-color .3s;
     text-align: center;
     letter-spacing: 0;
     font-weight: 200;
     background-color: rgb(0, 0, 0);
 }
 .imgSizes{
+    
     width:60%;
+}
+.infoImgSize{
+    height: 80%;
+    width:60%;
+    object-fit: contain;
 }
 body{
     margin:0;
@@ -32,88 +41,108 @@ header{
     text-align:center;
 }
 #container{
-    display:flex;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "black-color board white-color";
+    background-image:linear-gradient(90deg,#65ceff, #00b0ff);
+    min-height: 100vh;
+    height: max-content;
+    background-size: cover;
+    overflow: auto;
 }
 #whiteCharacters{
     color:white;
-    width:20%;
-    height:100vh;
-    background-image:linear-gradient(90deg,#65ceff, #00b0ff);
-    /* background-color:#00b0ff; */
+
     display: flex;
     flex-direction: column;
     align-items:center;
+    grid-area: white-color;
+    justify-content: center;
 }
 #board{
-    width: 60%;
-    height:100vh;
-    background-color:#65ceff;
+
+
     color:white;
     font-size: 1.5em;
     display:flex;
     flex-direction: column;
     align-items: center;
+    grid-area: board;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(max-content, auto)) 1fr minmax(max-content, auto);
 }
 #blackCharacters{
     color:white;
-    width:20%;
-    height:100vh;
-    background-image:linear-gradient(-90deg,#65ceff, #00b0ff);
-    /* background-color:#00b0ff; */
+
     display: flex;
     flex-direction: column;
     align-items:center;
+    justify-content: center;
+    grid-area: black-color;
 }
-/* .image-bgd:hover{
-    background-color:black;
-} */
+
 #zero{
     width:0;
 }
 #time{
     font-size: 0.7em;
     display:flex;
+    margin-bottom: 1rem;
     flex-direction: column;
-
 }
 .time{
-    padding:0.4em;
-   
-    flex-grow:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #chessBoard{
-    background-color: black;
-    background-image: url("../chess board.png");
-    background-size:35rem 35rem;
-    box-shadow:0.1em 0.1em 0.4em 0.002em  black;
-
-    width:23.2em;
-    height:23.2em;
-    background-repeat: no-repeat;
+    width:50%;
+    height: 100%;
     display:flex;
     align-items:center;
     justify-content: center;
 }
-#area{
-    height:23.2em;
-    width:100%;
+#chessBoard > div > img{
 
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+#area{
+    height: 100%;
+    width:100%;
+    align-items: center;
     display:flex;
     justify-content: center;
 }
+.board{
+    box-shadow:0.1em 0.1em 0.4em 0.002em  black;
+    position: relative;
+    width:100%;
 
+    display: table;
+    height: fit-content;
+}
 #playSection{
-
-    width:20.5em;
-    height:20.5em;
+    position: absolute;
+    top:var(--topOffsetInBoard);
+    left:var(--leftOffsetInBoard);
     display:flex;
     flex-wrap: wrap;
+    width:calc(100% - (var(--leftOffsetInBoard) * 2));
+    height:calc(100% - (var(--topOffsetInBoard) * 2));
     justify-content: start;
 }
 .boxes{
-
-    width:12.5%;
-    height:2.58em;
+    width: calc(100% / 8);
+    height: calc(100% / 8);
+    object-fit: contain;
+}
+.boxes >img{
+    width:50%;
+    object-fit: contain;
 }
 .centered{
     display:flex;
@@ -121,7 +150,7 @@ header{
     align-items: center;
 }
 #removedBlack{
-    height:23.2em;
+    height: 100%;
     width:20%;
     display:flex;
     flex-direction: column;
@@ -131,7 +160,7 @@ header{
 
 }
 #removedWhite{
-    height:23.2em;
+    height: 100%;
     width:20%;
     display:flex;
     flex-direction: column;
@@ -170,7 +199,6 @@ header{
 .ended{
     margin-top:5em;
     margin-bottom:10em;
-    width:30%;
     color:black;
     background-color: white;
     /* box-shadow:0.1em 0.1em 0.2em 0.002em  black; */
@@ -182,7 +210,7 @@ header{
     /* border-radius: 2em; */
 }
 .button{
-    background-image:radial-gradient(#65ceff, #00b0ff);
+ 
     padding:0.6em 1.5em 0.6em 1.5em;
     /* box-shadow:0.1em 0.1em 0.2em 0.002em  black; */
     border-radius: 1em;
@@ -191,4 +219,26 @@ header{
     font-size:0.8em;
     border:none;
  
+}
+@media (max-width:1000px) {
+    #container{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-template-areas: "board board"
+                            "black-color white-color";
+        overflow: hidden;
+    }
+
+    .image-bgd{
+        width:50%;}
+    
+}
+@media (max-device-width:500px) {
+    #container{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100vh auto;
+        grid-template-areas: "board board"
+                            "black-color white-color";
+        overflow: hidden;
+    }
 }

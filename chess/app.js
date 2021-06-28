@@ -9,7 +9,6 @@ const chessBoard = [["black castle", "black pawn", "", "", "", "", "white pawn",
 ["black knight", "black pawn", "", "", "", "", "white pawn", "white knight"],
 ["black castle", "black pawn", "", "", "", "", "white pawn", "white castle"]];
 
-//RELATIVE PATHS USED!!!!!!!!!!!!!!!!!!
 
 const images = {
     "black castle": "../black carlos.png",
@@ -28,8 +27,7 @@ const images = {
 };
 const chessPieces = document.querySelectorAll(".image-bgd");
 for (let chess of chessPieces) {
-    chess.addEventListener("mouseover", function (event) {
-        // chess.children[0].setAttribute("id", "zero");
+    chess.addEventListener("mouseenter", function (event) {
         chess.classList.add("info");
 
         const doc = document.createElement("span");
@@ -39,7 +37,7 @@ for (let chess of chessPieces) {
 
 
     });
-    chess.addEventListener("mouseout", function (event) {
+    chess.addEventListener("mouseleave", function (event) {
         let index = chess.innerHTML.indexOf('>');
         if (index !== -1) {
             let val = chess.innerHTML;
@@ -579,25 +577,11 @@ but.addEventListener("click", function (e) {
         location.reload();
     }
 });
-async function get() {
-    try {
-        const current_time = document.querySelector("#curr_time");
 
-        const time = await axios.get("http://worldtimeapi.org/api/ip");
-        let json = time;
-        let start = json.data.datetime.indexOf("T")
-        current_time.innerHTML = json.data.datetime.slice(start + 1, start + 1 + 5);
-
-        setInterval(async function () {
-            const time = await axios.get("http://worldtimeapi.org/api/ip");
-            let json = time;
-            let start = json.data.datetime.indexOf("T")
-            current_time.innerHTML = json.data.datetime.slice(start + 1, start + 1 + 5);
-        }, 1000);
-    }
-    catch (e) {
-        return undefined;
-    }
+const current_time = document.querySelector("#curr_time");
+function changeTime(){
+    const time = new Date();
+    current_time.innerHTML = `${time.getHours().toString().padStart(2, 0)}: ${time.getMinutes().toString().padStart(2, 0)}: ${time.getSeconds().toString().padStart(2, 0)}`;
 }
-get();
-
+changeTime();
+setInterval(changeTime, 1000);
